@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime List</title>
+
+    <style>
+        .gridContainer{
+            display: grid;
+            /* background-color: red ; */
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .gridItem{
+            /* background-color: blue; */
+            margin: 10px;
+        }
+        div > div > a:link, a:visited, a:hover, a:active{
+            color: black;
+            text-decoration: none;
+        }
+        h1{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        <a href="/">Home</a>
+    </h1>
+
+    <div class="gridContainer">
+        {% for item in animeList %}
+        <div class="gridItem">
+            <a href="https://myanimelist.net/anime/{{ item.node.id }}" target="_blank">
+                <h3>{{ item.node.title }}</h3>
+            </a>
+            <a href="https://myanimelist.net/anime/{{ item.node.id }}" target="_blank">
+                <img src="{{ item.node.main_picture.medium }}" alt="{{ item.node.title }}">
+            </a>
+            </div>
+
+        {% endfor %}
+    </div>
+</body>
+</html>

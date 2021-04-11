@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+</head>
+<body>
+    <h1>MyAnimeList Web App c:</h1>
+    <a href="{{ url_for('login') }}">Login</a>
+    
+    {% if userData %}
+        <a href=" {{ url_for('logout') }}">Logout</a>
+
+        <h1>{{ userData.name }}</h1>
+        <img src="{{ userData.picture }}" alt="">
+
+
+
+        <ul>
+            <li>
+                <a href="/me">Me</a>
+            </li>
+            <li>
+                <a href="/myAnimeList">My Anime List</a>
+            </li>
+            <li>
+                <a href="/sessionStuff">sessionStuff</a>
+            </li>
+    
+        </ul>
+        
+    {% endif %}
+
+</body>
+</html>
