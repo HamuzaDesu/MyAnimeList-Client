@@ -15,29 +15,30 @@
             /* background-color: blue; */
             margin: 10px;
         }
+
         div > div > a:link, a:visited, a:hover, a:active{
             color: black;
             text-decoration: none;
         }
-        h1{
-            text-align: center;
+        h3{
+            width: fit-content;
+            margin: 0%;
         }
-
     </style>
 </head>
 <body>
     <h1>
-        <a href="/">Home</a>
+        <a href="/">Go Home</a>
     </h1>
 
     <div class="gridContainer">
         {% for item in animeList %}
         <div class="gridItem">
             <a href="https://myanimelist.net/anime/{{ item.node.id }}" target="_blank">
-                <h3>{{ item.node.title }}</h3>
+                <h3 class="animeTitle">{{ item.node.title }}</h3>
             </a>
             <a href="https://myanimelist.net/anime/{{ item.node.id }}" target="_blank">
-                <img src="{{ item.node.main_picture.medium }}" alt="{{ item.node.title }}">
+                <img class="animePicture" src="{{ item.node.main_picture.medium }}" alt="{{ item.node.title }}">
             </a>
             </div>
 
